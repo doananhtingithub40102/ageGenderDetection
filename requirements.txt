@@ -1,6 +1,5 @@
 numpy
 opencv-python
-os
 flask
 Pillow
 werkzeug
