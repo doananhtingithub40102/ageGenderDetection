@@ -77,7 +77,7 @@ def draw_box_and_label(img, box, conf, predAge, predGender):
 def gen_frames():  # generate frame by frame from camera
 	global camera
 	if not camera.isOpened():
-		camera = cv2.VideoCapture(1000)
+		camera = cv2.VideoCapture(0)
 
 	while True:
         # Capture frame-by-frame
@@ -152,7 +152,7 @@ net = cv2.dnn.readNetFromCaffe("./saved_model/deploy.prototxt.txt", "./saved_mod
 multitask_model = tf.keras.models.load_model('./saved_model/efficientNetB2_weight.h5')
 
 streaming = True
-camera = cv2.VideoCapture(1000)
+camera = cv2.VideoCapture(0)
 
 @app.route('/')
 def index_view():
@@ -257,4 +257,4 @@ def next_face():
 	return render_template('index.html', imgFile=filename, faceFile=faceFiles[INDEX_FACE], age=output[INDEX_FACE][0], gender=output[INDEX_FACE][1])
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8000, host='0.0.0.0', threaded=True)
+    app.run(debug=True, port=8000, host='0.0.0.0')
