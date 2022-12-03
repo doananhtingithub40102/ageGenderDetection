@@ -1,7 +1,0 @@
-numpy
-opencv-python
-flask
-Pillow
-werkzeug
-mtcnn
-tensorflow
