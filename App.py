@@ -257,4 +257,4 @@ def next_face():
 	return render_template('index.html', imgFile=filename, faceFile=faceFiles[INDEX_FACE], age=output[INDEX_FACE][0], gender=output[INDEX_FACE][1])
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=False, port=8000, host='0.0.0.0')
