@@ -1,0 +1,8 @@
+numpy
+cv2
+os
+flask
+Pillow
+werkzeug
+mtcnn
+tensorflow
